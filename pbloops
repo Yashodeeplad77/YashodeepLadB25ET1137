@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+class Complex {
+    float r, i;
+
+public:
+    void get() {
+        cin >> r >> i;
+    }
+
+    void add(Complex c) {
+        cout << "Addition = " << r + c.r << " + " << i + c.i << "i\n";
+    }
+
+    void sub(Complex c) {
+        cout << "Subtraction = " << r - c.r << " - " << i - c.i << "i\n";
+    }
+
+    void mul(Complex c) {
+        cout << "Multiplication = "
+             << r * c.r - i * c.i << " * "
+             << r * c.i + i * c.r << "i\n";
+    }
+
+    void conjugate() {
+        cout << "Conjugate = " << r << " / " << i << "i\n";
+    }
+};
+
+int main() {
+    Complex a, b;
+
+    cout << "Enter real and imaginary parts of two numbers:\n";
+
+    a.get();
+    b.get();
+
+    a.add(b);
+    a.sub(b);
+    a.mul(b);
+    a.conjugate();
+
+    return 0;
+}
