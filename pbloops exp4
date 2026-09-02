@@ -1,45 +1,50 @@
 #include <iostream>
 using namespace std;
 
-class Complex {
+class Complex
+{
+private:
     float r, i;
 
 public:
-    void get() {
-        cin >> r >> i;
+   
+    void read()
+    {
+        cout << "Enter real part: ";
+        cin >> r;
+
+        cout << "Enter imaginary part: ";
+        cin >> i;
     }
 
-    void add(Complex c) {
-        cout << "Addition = " << r + c.r << " + " << i + c.i << "i\n";
-    }
 
-    void sub(Complex c) {
-        cout << "Subtraction = " << r - c.r << " - " << i - c.i << "i\n";
-    }
+    void reciprocal()
+    {
+        float denominator = (r * r) + (i * i);
 
-    void mul(Complex c) {
-        cout << "Multiplication = "
-             << r * c.r - i * c.i << " * "
-             << r * c.i + i * c.r << "i\n";
-    }
+        if (denominator == 0)
+        {
+            cout << "Reciprocal does not exist for 0 + 0i." << endl;
+        }
+        else
+        {
+            float realPart = r/ denominator;
+            float imagPart = -i / denominator;
 
-    void conjugate() {
-        cout << "Conjugate = " << r << " / " << i << "i\n";
+            cout << "Reciprocal = "
+                 << realPart << " + ("
+                 << imagPart << ")i" << endl;
+        }
     }
 };
 
-int main() {
-    Complex a, b;
+int main()
+{
+    Complex c;
 
-    cout << "Enter real and imaginary parts of two numbers:\n";
-
-    a.get();
-    b.get();
-
-    a.add(b);
-    a.sub(b);
-    a.mul(b);
-    a.conjugate();
+    c.read();
+    c.reciprocal();
 
     return 0;
 }
+   
