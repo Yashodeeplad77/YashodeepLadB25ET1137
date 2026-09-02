@@ -45,3 +45,13 @@ int main()
 
     return 0;
 }
+
+OUTPUT:-
+OUTPUT:-
+Enter first 2D point (x y): 45 56
+Enter second 2D point (x y): 56 56
+Distance in 2D = 11
+
+Enter first 3D point (x y z): 54 56 35
+Enter second 3D point (x y z): 54 43 64
+Distance in 3D = 31.7805
