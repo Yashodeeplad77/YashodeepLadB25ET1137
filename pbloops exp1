@@ -22,6 +22,8 @@ int main() {
 }
 
 
+output:-
+
 Enter the number of rows: 4
    1 
   1 1 
