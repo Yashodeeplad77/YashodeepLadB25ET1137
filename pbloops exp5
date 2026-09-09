@@ -2,14 +2,13 @@
 #include <cmath>
 using namespace std;
 
-// Function to calculate distance between two 2D points
 double distance(double x1, double y1, double x2, double y2)
 {
     return sqrt((x2 - x1) * (x2 - x1) +
                 (y2 - y1) * (y2 - y1));
 }
 
-// Function to calculate distance between two 3D points
+
 double distance(double x1, double y1, double z1,
                 double x2, double y2, double z2)
 {
@@ -23,7 +22,7 @@ int main()
     double x1, y1, x2, y2;
     double x3, y3, z3, x4, y4, z4;
 
-    // 2D coordinates
+  
     cout << "Enter first 2D point (x y): ";
     cin >> x1 >> y1;
 
@@ -33,7 +32,6 @@ int main()
     cout << "Distance in 2D = "
          << distance(x1, y1, x2, y2) << endl;
 
-    // 3D coordinates
     cout << "\nEnter first 3D point (x y z): ";
     cin >> x3 >> y3 >> z3;
 
