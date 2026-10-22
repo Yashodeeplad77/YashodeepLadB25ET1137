@@ -1,33 +1,45 @@
-#include <iostream>
+#include <iostream>  // Header file for input and output
 using namespace std;
 
+// Define a class named Complex
 class Complex {
-    float real, imag;
+    float real, imag;  // Data members for real and imaginary parts
 
 public:
+    // Constructor to initialize real and imaginary parts
+    // Default values are 0 if no arguments are provided
     Complex(float r = 0, float i = 0) {
         real = r;
         imag = i;
     }
 
+    // Function to accept a complex number from the user
     void input() {
         cout << "Enter real and imaginary parts: ";
         cin >> real >> imag;
     }
 
-    // Overloading *= operator
+    // Overloading the *= operator for complex number multiplication
     Complex& operator*=(const Complex& c) {
+        // Calculate the real part of the product
         float r = real * c.real - imag * c.imag;
+
+        // Calculate the imaginary part of the product
         float i = real * c.imag + imag * c.real;
 
+        // Update the current object's real and imaginary parts
         real = r;
         imag = i;
 
+        // Return the current object by reference
         return *this;
     }
 
+    // Function to display the complex number
     void display() {
         cout << real;
+
+        // Display the imaginary part with the correct sign
         if (imag >= 0)
             cout << " + " << imag << "i" << endl;
         else
@@ -35,23 +47,28 @@ public:
     }
 };
 
+// Main function
 int main() {
+    // Create two objects of the Complex class
     Complex c1, c2;
 
+    // Accept the first complex number
     cout << "Enter first complex number:\n";
     c1.input();
 
+    // Accept the second complex number
     cout << "Enter second complex number:\n";
     c2.input();
 
+    // Multiply c1 by c2 using the overloaded *= operator
     c1 *= c2;
 
+    // Display the product of the two complex numbers
     cout << "Product of complex numbers: ";
     c1.display();
 
-    return 0;
+    return 0;  // End the program successfully
 }
-
 
 output:-
 
