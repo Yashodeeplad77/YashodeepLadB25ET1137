@@ -1,0 +1,44 @@
+#include <iostream>  // Header file for input and output
+#include <stdexcept> // Header file for exceptions
+using namespace std;
+
+int main()
+{
+    double amount;  // Variable to store the deposit amount
+
+    // Accept deposit amount from the user
+    cout << "Enter deposit amount: ";
+    cin >> amount;
+
+    try
+    {
+        // Check whether the deposit amount is negative
+        if (amount < 0)
+        {
+            // Throw an exception if the amount is negative
+            throw invalid_argument("Deposit amount cannot be negative.");
+        }
+
+        // Display the deposit amount if it is valid
+        cout << "Deposit successful!" << endl;
+        cout << "Deposit amount: " << amount << endl;
+    }
+    catch (const invalid_argument& e)
+    {
+        // Catch and display the exception message
+        cout << "Exception: " << e.what() << endl;
+    }
+
+    return 0;  // End the program
+}
+
+output:-
+Enter deposit amount: 1000
+Deposit successful!
+Deposit amount: 1000
+
+Enter deposit amount: -1000
+Exception: Deposit amount cannot be negative.
+
+
+
