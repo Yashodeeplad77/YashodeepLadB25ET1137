@@ -1,0 +1,60 @@
+#include <iostream>  // Header file for input and output
+using namespace std;
+
+// Base class
+class HospitalStaff
+{
+public:
+    // Virtual function to display duty
+    virtual void displayDuty()
+    {
+        cout << "Hospital staff performs duties." << endl;
+    }
+};
+
+// Derived class Doctor
+class Doctor : public HospitalStaff
+{
+public:
+    // Override the base class function
+    void displayDuty() override
+    {
+        cout << "Doctor: Diagnoses and treats patients." << endl;
+    }
+};
+
+// Derived class Nurse
+class Nurse : public HospitalStaff
+{
+public:
+    // Override the base class function
+    void displayDuty() override
+    {
+        cout << "Nurse: Cares for patients and administers medicines." << endl;
+    }
+};
+
+// Main function
+int main()
+{
+    // Create objects of derived classes
+    Doctor d;
+    Nurse n;
+
+    // Base class pointer
+    HospitalStaff *staff;
+
+    // Point to Doctor object and call displayDuty()
+    staff = &d;
+    staff->displayDuty();
+
+    // Point to Nurse object and call displayDuty()
+    staff = &n;
+    staff->displayDuty();
+
+    return 0;  // End the program
+}
+
+output:-
+Doctor: Diagnoses and treats patients.
+Nurse: Cares for patients and administers medicines.
